@@ -28,3 +28,17 @@ function kaprekarNumbers(p, q) {
     console.log(kapNums.length === 0 ? "INVALID RANGE" : kapNums);
     return kapNums.length === 0 ? "INVALID RANGE" : kapNums;
 }
+
+
+//////////////////////////////////////////////////////////////////////////
+function kaprekarNumbers(p, q) {
+  const result = [];
+  for (let i = p; i <= q; i++) {
+    const d = i.toString().length;
+    const s = (i ** 2).toString();
+    const l = Number(s.slice(0, s.length - d));
+    const r = Number(s.slice(s.length - d));
+    if (i === l + r) result.push(i);
+  }
+  console.log(result.length ? result.join(" ") : "INVALID RANGE");
+}
